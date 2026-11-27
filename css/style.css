@@ -784,8 +784,8 @@ button, input, select, textarea {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .service-card {
@@ -893,6 +893,590 @@ button, input, select, textarea {
   font-weight: bold;
   font-size: 0.9375rem;
   flex-shrink: 0;
+}
+
+.service-action-link {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.service-text-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.service-text-link:hover {
+  color: #0284C7;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   8B. Dedicated Strategic Logistics Section (Hansai Shipping Line)
+   -------------------------------------------------------------------------- */
+.logistics-section {
+  padding: var(--section-pad-y) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+/* Carrier Partnership Showcase Card */
+.partner-showcase-card {
+  background: linear-gradient(135deg, #07172C 0%, #0B1F3A 100%);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  padding: 44px;
+  margin-bottom: 48px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.partner-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.partner-badge-row {
+  margin-bottom: 18px;
+}
+
+.partner-official-tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #E2E8F0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9999px;
+}
+
+.partner-logos-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background-color: var(--color-white);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-sublockup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sublockup-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+
+.partner-card-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-card-logo.hansai-brand-img {
+  height: 38px;
+}
+
+.partner-bridge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-navy);
+  background-color: var(--color-gray-100);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.partner-tagline {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.partner-card-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-partner-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0084FF;
+  border-color: #0084FF;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-partner-visit:hover {
+  background-color: #0070D8;
+  border-color: #0070D8;
+}
+
+/* Partner Pillars 4-Stat Grid */
+.partner-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.partner-stat-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  transition: background-color 0.2s ease;
+}
+
+.partner-stat-item:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #60A5FA;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.stat-meta {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.stat-subtext {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #94A3B8;
+  margin: 0;
+}
+
+/* Logistics Tools Section (Rate Estimator & Telematics) */
+.logistics-tools-wrapper {
+  margin-bottom: 48px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+}
+
+.tool-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-card-header {
+  margin-bottom: 22px;
+}
+
+.tool-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0369A1;
+  background-color: #E0F2FE;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.tool-title {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+
+.tool-desc {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Rate Calculator Form & Box */
+.calc-input {
+  background-color: var(--color-gray-50);
+}
+
+.calc-result-box {
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.result-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  letter-spacing: 0.04em;
+}
+
+.metric-value {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.metric-value.highlight {
+  color: #0284C7;
+  font-size: 1.3125rem;
+}
+
+.result-spec-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+  border-top: 1px solid #E2E8F0;
+  padding-top: 10px;
+}
+
+.spec-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #0284C7;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Telematics Lookup Form */
+.input-with-button {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tracking-input {
+  flex: 1;
+}
+
+.sample-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.chip-label {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.chip-btn {
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.6875rem;
+  font-family: monospace;
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  background-color: #E2E8F0;
+  border-color: #CBD5E1;
+}
+
+/* Simulated Live Telemetry Feed Box */
+.telemetry-feed {
+  background-color: #0B1F3A;
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 10px;
+}
+
+.feed-status-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.live-text {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #6EE7B7;
+}
+
+.feed-container-id {
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: #93C5FD;
+  font-weight: 600;
+}
+
+.feed-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feed-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feed-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: #94A3B8;
+  letter-spacing: 0.03em;
+}
+
+.feed-val {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #F8FAFC;
+}
+
+.text-blue {
+  color: #60A5FA;
+}
+
+.text-green {
+  color: #34D399;
+}
+
+.feed-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.feed-external-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #93C5FD;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.feed-external-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 4-Step End-to-End Cold Chain Workflow */
+.logistics-workflow {
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  border: 1px solid var(--color-gray-200);
+}
+
+.workflow-header {
+  margin-bottom: 32px;
+}
+
+.workflow-title {
+  font-size: 1.4375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+
+.workflow-desc {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.workflow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.workflow-step-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-num {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: #0284C7;
+  background-color: #E0F2FE;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.step-text {
+  font-size: 0.8125rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Strategic Partner Strip in Footer */
+.footer-partner-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 22px 0;
+  margin: 36px 0 24px 0;
+}
+
+.footer-partner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.partner-strip-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.partner-strip-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #93C5FD;
+  background-color: rgba(147, 197, 253, 0.12);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.partner-strip-label {
+  font-size: 0.8125rem;
+  color: #E2E8F0;
+  font-weight: 600;
+}
+
+.footer-partner-brand-link {
+  display: inline-block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-partner-brand-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.footer-partner-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-strip-desc {
+  font-size: 0.75rem;
+  color: #94A3B8;
 }
 
 /* --------------------------------------------------------------------------
@@ -1516,6 +2100,17 @@ button, input, select, textarea {
   .strengths-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .partner-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .workflow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .footer-top-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px;
@@ -1546,6 +2141,9 @@ button, input, select, textarea {
   .about-img {
     height: 380px;
   }
+  .partner-showcase-card {
+    padding: 32px 24px;
+  }
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1570,6 +2168,29 @@ button, input, select, textarea {
   }
   .services-grid {
     grid-template-columns: 1fr;
+  }
+  .partner-logos-lockup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .partner-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .workflow-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .feed-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-partner-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .gallery-grid {
     grid-template-columns: 1fr;

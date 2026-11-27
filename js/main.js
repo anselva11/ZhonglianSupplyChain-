@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initLanguage();
   initKeyboardNav();
+  if (typeof updateFreightEstimate === 'function') {
+    updateFreightEstimate();
+  }
 });
 
 /* --------------------------------------------------------------------------
@@ -187,6 +190,11 @@ function setLanguage(lang) {
   // Update open lightbox if active
   if (document.getElementById('lightbox-modal').classList.contains('active')) {
     updateLightboxContent(currentLightboxIndex);
+  }
+
+  // Update dynamic freight estimates and telematics in active language
+  if (typeof updateFreightEstimate === 'function') {
+    updateFreightEstimate();
   }
 }
 
@@ -367,4 +375,176 @@ function handleFormSubmit(event) {
       statusEl.style.display = 'none';
     }, 10000);
   }, 600);
+}
+
+/* --------------------------------------------------------------------------
+   6. Hansai Shipping Line Integration: Instant Freight Estimator & Telematics
+   -------------------------------------------------------------------------- */
+const hansaiRates = {
+  IDJKT: {
+    days: '8 – 10',
+    '40reefer': {
+      rate: '$1,280 – $1,550',
+      zh: '冷链模式：40尺高顶冷藏集装箱全程通电温控（-25°C ~ +15°C）与物联网监控。',
+      id: 'Mode Rantai Dingin: Kontainer Reefer 40ft aktif dengan telematika suhu -25°C hingga +15°C.',
+      en: 'Cold Chain Mode: Active 40ft Reefer telematics with continuous -25°C to +15°C power.'
+    },
+    '40hc': {
+      rate: '$780 – $960',
+      zh: '普货整箱：40尺高顶高容积集装箱（76.4 CBM容积），适用工业品与电子机械。',
+      id: 'Kargo Umum: Kontainer 40ft High Cube (kapasitas 76.4 CBM), untuk barang industri & manufaktur.',
+      en: 'General Cargo: 40ft High Cube Dry Container (76.4 CBM capacity) for industrial and dry goods.'
+    },
+    '20gp': {
+      rate: '$490 – $640',
+      zh: '普货标准箱：20尺标准重箱（33.2 CBM容积），适用高密度工业耗材与重货。',
+      id: 'Kargo Standar: Kontainer 20ft Standard (kapasitas 33.2 CBM), cocok untuk kargo berat.',
+      en: 'Standard Dry: 20ft Standard Container (33.2 CBM capacity) for heavy and dense cargo.'
+    }
+  },
+  IDSUB: {
+    days: '10 – 12',
+    '40reefer': {
+      rate: '$1,380 – $1,650',
+      zh: '冷链模式：40尺高顶冷藏集装箱全程通电温控（-25°C ~ +15°C）与物联网监控。',
+      id: 'Mode Rantai Dingin: Kontainer Reefer 40ft aktif dengan telematika suhu -25°C hingga +15°C.',
+      en: 'Cold Chain Mode: Active 40ft Reefer telematics with continuous -25°C to +15°C power.'
+    },
+    '40hc': {
+      rate: '$840 – $1,020',
+      zh: '普货整箱：40尺高顶高容积集装箱，直航印尼泗水丹戎佩拉港（Tanjung Perak）。',
+      id: 'Kargo Umum: Kontainer 40ft High Cube, rute langsung ke Pelabuhan Tanjung Perak Surabaya.',
+      en: 'General Cargo: 40ft High Cube Dry Container direct to Tanjung Perak Port, Surabaya.'
+    },
+    '20gp': {
+      rate: '$540 – $710',
+      zh: '普货标准箱：20尺标准重箱，直达印尼东爪哇工业核心枢纽。',
+      id: 'Kargo Standar: Kontainer 20ft Standard menuju hub industri Jawa Timur.',
+      en: 'Standard Dry: 20ft Standard Container serving East Java industrial corridor.'
+    }
+  },
+  SGSIN: {
+    days: '5 – 7',
+    '40reefer': {
+      rate: '$1,050 – $1,320',
+      zh: '冷链模式：高速班轮直航新加坡港，配备高精度连续冷链监测。',
+      id: 'Mode Rantai Dingin: Pelayaran cepat ke Pelabuhan Singapura dengan telematika suhu presisi.',
+      en: 'Cold Chain Mode: Fast express liner direct to Singapore PSA with precision temperature logs.'
+    },
+    '40hc': {
+      rate: '$620 – $800',
+      zh: '普货整箱：40尺高箱直航东南亚核心中转枢纽，极速班期。',
+      id: 'Kargo Umum: Kontainer 40ft High Cube rute kilat ke hub transit ASEAN Singapura.',
+      en: 'General Cargo: 40ft High Cube Dry Container direct to Singapore transshipment hub.'
+    },
+    '20gp': {
+      rate: '$380 – $520',
+      zh: '普货标准箱：20尺标准干箱，经济高效的东南亚快线。',
+      id: 'Kargo Standar: Kontainer 20ft Standard, rute hemat dan cepat ke Singapura.',
+      en: 'Standard Dry: 20ft Standard Container, economical direct ASEAN sea connection.'
+    }
+  },
+  NLRTM: {
+    days: '26 – 28',
+    '40reefer': {
+      rate: '$3,200 – $3,650',
+      zh: '欧线冷链特箱：40尺超长远洋冷藏箱，配置双套独立制冷机组与卫星温湿度回传。',
+      id: 'Reefer Jalur Eropa: Kontainer 40ft jarak jauh dengan sistem pendingin ganda dan telematika satelit.',
+      en: 'Europe Reefer: 40ft long-haul reefer container with dual redundant cooling and satellite telematics.'
+    },
+    '40hc': {
+      rate: '$2,100 – $2,480',
+      zh: '欧线大箱：40尺高箱直航欧洲第一大港荷兰鹿特丹港（NLRTM）。',
+      id: 'Kargo Jalur Eropa: Kontainer 40ft High Cube langsung ke Pelabuhan Rotterdam (NLRTM).',
+      en: 'Europe Liner: 40ft High Cube direct to Port of Rotterdam (NLRTM), gateway to Europe.'
+    },
+    '20gp': {
+      rate: '$1,350 – $1,620',
+      zh: '欧线小箱：20尺重箱经苏伊士运河直航欧洲门户枢纽。',
+      id: 'Kargo 20ft Eropa: Kontainer 20ft via Terusan Suez menuju pintu gerbang Eropa.',
+      en: 'Europe Standard: 20ft Dry Container via Suez maritime artery to European hub.'
+    }
+  },
+  USLAX: {
+    days: '14 – 16',
+    '40reefer': {
+      rate: '$3,800 – $4,350',
+      zh: '美西冷链：40尺高箱直航美国洛杉矶港，满足严格FDA与USDA进口温控全流程验证。',
+      id: 'Reefer Pantai Barat AS: Kontainer 40ft ke Los Angeles dengan kepatuhan standar suhu FDA/USDA.',
+      en: 'US West Coast Reefer: 40ft Reefer direct to Port of Los Angeles with full temperature verification.'
+    },
+    '40hc': {
+      rate: '$2,450 – $2,890',
+      zh: '美西干线：太平洋跨洋直航美国西海岸核心集装箱码头。',
+      id: 'Jalur Pantai Barat AS: Rute pelayaran Pasifik langsung ke dermaga peti kemas utama Los Angeles.',
+      en: 'Transpacific Liner: Direct ocean service across the Pacific to Los Angeles gateway.'
+    },
+    '20gp': {
+      rate: '$1,650 – $1,980',
+      zh: '美西标箱：20尺标准重箱跨太平洋直发。',
+      id: 'Standar Pantai Barat AS: Kontainer 20ft jalur cepat Pasifik.',
+      en: 'Transpacific Standard: 20ft Dry container express Pacific service.'
+    }
+  }
+};
+
+function updateFreightEstimate() {
+  const destEl = document.getElementById('calc-dest');
+  const equipEl = document.getElementById('calc-equipment');
+  const transitEl = document.getElementById('calc-transit-time');
+  const rateEl = document.getElementById('calc-rate-range');
+  const specEl = document.getElementById('calc-spec-text');
+
+  if (!destEl || !equipEl || !transitEl || !rateEl || !specEl) return;
+
+  const dest = destEl.value;
+  const equip = equipEl.value;
+
+  const data = hansaiRates[dest];
+  if (!data) return;
+
+  const daysSuffix = currentLanguage === 'zh' ? ' 天' : (currentLanguage === 'id' ? ' Hari' : ' Days');
+  transitEl.textContent = `${data.days}${daysSuffix}`;
+
+  const equipData = data[equip];
+  if (equipData) {
+    rateEl.textContent = equipData.rate;
+    specEl.textContent = equipData[currentLanguage] || equipData.en;
+  }
+}
+
+// Telematics Lookup
+function lookupTelematics() {
+  const inputEl = document.getElementById('telematics-input');
+  if (!inputEl) return;
+  const val = inputEl.value.trim().toUpperCase();
+  if (!val) return;
+
+  const feedDisplay = document.getElementById('feed-id-display');
+  const feedVessel = document.getElementById('feed-vessel');
+  const feedRoute = document.getElementById('feed-route');
+  const feedTemp = document.getElementById('feed-temp');
+  const feedStatus = document.getElementById('feed-status');
+
+  if (feedDisplay) feedDisplay.textContent = val;
+
+  if (val.includes('DRY') || val.includes('ZLSC')) {
+    if (feedVessel) feedVessel.textContent = 'M/V HANSAI GLORY (Voy. 1402W)';
+    if (feedRoute) feedRoute.textContent = 'Ningbo (CNNGB) → Surabaya (IDSUB)';
+    if (feedTemp) feedTemp.textContent = currentLanguage === 'zh' ? '常温干货（非温控）' : (currentLanguage === 'id' ? 'Kargo Suhu Ruang (Dry)' : 'Ambient (Dry Cargo)');
+    if (feedStatus) feedStatus.textContent = currentLanguage === 'zh' ? '靠泊准备中 — 预计明日到港' : (currentLanguage === 'id' ? 'Mendekati Dermaga — Tiba Besok' : 'Approaching Berth — ETA Tomorrow');
+  } else {
+    if (feedVessel) feedVessel.textContent = 'M/V HANSAI PHOENIX (Voy. 2608S)';
+    if (feedRoute) feedRoute.textContent = 'Ningbo (CNNGB) → Jakarta (IDJKT)';
+    if (feedTemp) feedTemp.textContent = '-18.4°C / -18.0°C (' + (currentLanguage === 'zh' ? '运行稳定' : (currentLanguage === 'id' ? 'Stabil' : 'Stable')) + ')';
+    if (feedStatus) feedStatus.textContent = currentLanguage === 'zh' ? '海上航行中 — 航期准点' : (currentLanguage === 'id' ? 'Dalam Pelayaran — Tepat Waktu' : 'Underway at Sea — On Schedule');
+  }
+}
+
+function setTrackingSample(sampleId) {
+  const inputEl = document.getElementById('telematics-input');
+  if (inputEl) {
+    inputEl.value = sampleId;
+    lookupTelematics();
+  }
 }
