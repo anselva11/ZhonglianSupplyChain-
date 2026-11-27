@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhonglian Supply Chain Co., Ltd. | 中联供应链有限公司 - Professional Supply Chain & Warehousing Solutions</title>
+  <meta name="description" content="Zhonglian Supply Chain Co., Ltd. (中联供应链有限公司) specializes in integrated supply chain management, cold storage warehousing, and general warehousing solutions in China.">
+  <meta name="keywords" content="Zhonglian Supply Chain, 中联供应链, cold storage China, warehousing solutions, supply chain management, temperature-controlled storage, pergudangan china">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Assets/favicon.png">
+  <link rel="apple-touch-icon" href="Assets/favicon.png">
+
+  <!-- Inter & Noto Sans SC Fonts from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="zh-mode">
+
+  <!-- Top Announcement / Corporate Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="company-badge" data-en="Zhonglian Supply Chain Co., Ltd." data-zh="中联供应链有限公司" data-id="Zhonglian Supply Chain Co., Ltd.">中联供应链有限公司</span>
+        <span class="divider">|</span>
+        <span class="chinese-sub" data-en="China B2B Warehousing & Cold Chain Operations" data-zh="中国B2B仓储与冷链运营中心" data-id="Pusat Operasional Pergudangan & Rantai Dingin B2B China">中国B2B仓储与冷链运营中心</span>
+      </div>
+      <div class="top-bar-right">
+        <!-- Language Switcher: China (中文), Indonesia (ID), International (EN) -->
+        <div class="lang-selector" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btn-lang-zh" onclick="setLanguage('zh')">中文</button>
+          <span class="lang-sep">/</span>
+          <button type="button" class="lang-btn" id="btn-lang-id" onclick="setLanguage('id')">ID</button>
+          <span class="lang-sep">/</span>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Clean White Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#home" class="logo-link" aria-label="Zhonglian Supply Chain Home">
+        <img src="Assets/logo-horizontal.png" alt="Zhonglian Supply Chain Co., Ltd. | 中联供应链有限公司" class="header-logo" width="320" height="50">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active" data-en="Home" data-zh="首页" data-id="Beranda">首页</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-en="About Us" data-zh="关于我们" data-id="Tentang Kami">关于我们</a></li>
+          <li class="nav-item"><a href="#supply-chain" class="nav-link" data-en="Supply Chain" data-zh="供应链管理" data-id="Rantai Pasok">供应链管理</a></li>
+          <li class="nav-item"><a href="#cold-storage" class="nav-link" data-en="Cold Storage" data-zh="冷库仓储" data-id="Cold Storage">冷库仓储</a></li>
+          <li class="nav-item"><a href="#warehousing" class="nav-link" data-en="Warehousing" data-zh="普货仓储" data-id="Pergudangan">普货仓储</a></li>
+          <li class="nav-item"><a href="#facilities" class="nav-link" data-en="Facilities" data-zh="设施风采" data-id="Fasilitas">设施风采</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-en="Contact" data-zh="联系我们" data-id="Kontak">联系我们</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-navy-header" data-en="Contact Us" data-zh="联系我们" data-id="Hubungi Kami">联系我们</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <img src="Assets/logo-horizontal.png" alt="Zhonglian Supply Chain" class="mobile-logo">
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link" data-en="Home" data-zh="首页" data-id="Beranda">首页</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-en="About Us" data-zh="关于我们" data-id="Tentang Kami">关于我们</a></li>
+        <li><a href="#supply-chain" class="mobile-nav-link" data-en="Supply Chain" data-zh="供应链管理" data-id="Rantai Pasok">供应链管理</a></li>
+        <li><a href="#cold-storage" class="mobile-nav-link" data-en="Cold Storage" data-zh="冷库仓储" data-id="Cold Storage">冷库仓储</a></li>
+        <li><a href="#warehousing" class="mobile-nav-link" data-en="Warehousing" data-zh="普货仓储" data-id="Pergudangan">普货仓储</a></li>
+        <li><a href="#facilities" class="mobile-nav-link" data-en="Facilities" data-zh="设施展示" data-id="Fasilitas">设施展示</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-en="Contact" data-zh="联系我们" data-id="Kontak">联系我们</a></li>
+      </ul>
+      <div class="mobile-drawer-actions">
+        <div class="mobile-lang-row">
+          <span data-en="Language:" data-zh="语言切换：" data-id="Bahasa:">语言切换：</span>
+          <button type="button" class="lang-btn active" id="m-lang-zh" onclick="setLanguage('zh')">中文</button>
+          <span>/</span>
+          <button type="button" class="lang-btn" id="m-lang-id" onclick="setLanguage('id')">ID</button>
+          <span>/</span>
+          <button type="button" class="lang-btn" id="m-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-navy mobile-cta-btn" data-en="Contact Us" data-zh="联系我们" data-id="Hubungi Kami">联系我们</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-wrapper">
+        <img src="Assets/images/hero-wide-warehouse.jpg" alt="Modern industrial warehouse and cold storage facility" class="hero-bg-img" fetchpriority="high">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-label">
+            <span class="label-line"></span>
+            <span class="label-text" data-en="ZHONGLIAN SUPPLY CHAIN CO., LTD." data-zh="中联供应链有限公司" data-id="ZHONGLIAN SUPPLY CHAIN CO., LTD.">中联供应链有限公司</span>
+          </div>
+          <h1 class="hero-title" data-en="Reliable Supply Chain &amp; Warehousing Solutions" data-zh="值得信赖的供应链与现代化仓储解决方案" data-id="Solusi Rantai Pasok &amp; Pergudangan Terpercaya">
+            值得信赖的供应链与现代化仓储解决方案
+          </h1>
+          <p class="hero-subtitle" data-en="Connecting businesses through dependable supply chain management, modern warehousing facilities, and temperature-controlled storage solutions." data-zh="通过可靠的供应链管理、现代化仓储设施以及温控冷链仓储解决方案，为企业构筑坚实持久的合作桥梁。" data-id="Menghubungkan bisnis melalui manajemen rantai pasok yang andal, fasilitas pergudangan modern, dan solusi penyimpanan dengan pengatur suhu.">
+            通过可靠的供应链管理、现代化仓储设施以及温控冷链仓储解决方案，为企业构筑坚实持久的合作桥梁。
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary" data-en="Explore Our Services" data-zh="了解我们的服务" data-id="Jelajahi Layanan Kami">了解我们的服务</a>
+            <a href="#contact" class="btn btn-secondary" data-en="Contact Our Team" data-zh="联系专业团队" data-id="Hubungi Tim Kami">联系专业团队</a>
+          </div>
+
+          <!-- Restrained Corporate Value Indicators -->
+          <div class="hero-pillars">
+            <div class="pillar-item">
+              <span class="pillar-bullet"></span>
+              <span class="pillar-title" data-en="Supply Chain Management" data-zh="供应链协同管理" data-id="Manajemen Rantai Pasok">供应链协同管理</span>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-bullet"></span>
+              <span class="pillar-title" data-en="Cold Storage Warehousing" data-zh="专业温控冷库" data-id="Pergudangan Cold Storage">专业温控冷库</span>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-bullet"></span>
+              <span class="pillar-title" data-en="General Warehousing" data-zh="现代化高标仓储" data-id="Pergudangan Umum">现代化高标仓储</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Column: Realistic Warehouse Facility Photograph -->
+          <div class="about-visual">
+            <div class="image-frame">
+              <img src="Assets/images/about-warehouse.jpg" alt="Modern industrial warehouse storage interior" class="about-img" loading="lazy">
+              <div class="image-caption-card">
+                <span class="caption-tag" data-en="OPERATIONAL FACILITY" data-zh="实体运营设施" data-id="FASILITAS OPERASIONAL">实体运营设施</span>
+                <p class="caption-desc" data-en="High-density storage racking and organized warehouse floor management." data-zh="高密度立体仓储货架与严谨有序的库内作业管理。" data-id="Rak penyimpanan densitas tinggi dan tata kelola operasional gudang yang terorganisir.">高密度立体仓储货架与严谨有序的库内作业管理。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Corporate Introduction -->
+          <div class="about-content">
+            <div class="section-tag" data-en="ABOUT ZHONGLIAN" data-zh="关于中联供应链" data-id="TENTANG ZHONGLIAN">关于中联供应链</div>
+            <h2 class="section-title" data-en="Building Reliable Supply Chain Foundations" data-zh="构筑稳固可靠的供应链基石" data-id="Membangun Fondasi Rantai Pasok yang Andal">
+              构筑稳固可靠的供应链基石
+            </h2>
+            <div class="text-block">
+              <p data-en="Zhonglian Supply Chain Co., Ltd. (中联供应链有限公司) is a China-based corporate provider specializing in integrated supply chain management, cold storage warehousing, and general warehousing solutions. We serve corporate enterprises and commercial partners seeking dependable, well-managed storage and inventory infrastructure." data-zh="中联供应链有限公司是一家立足中国、服务全球商业伙伴的专业供应链与仓储运营企业。公司专注于一体化供应链管理、专业温控冷库仓储及现代化通用普货仓储，为广大企业级客户提供值得信赖的库内作业与存管基础设施。" data-id="Zhonglian Supply Chain Co., Ltd. (中联供应链有限公司) adalah penyedia korporat berbasis di China yang berspesialisasi dalam manajemen rantai pasok terintegrasi, pergudangan cold storage, dan solusi pergudangan umum. Kami melayani perusahaan dan mitra komersial yang membutuhkan infrastruktur penyimpanan dan inventaris yang andal dan terkelola dengan baik.">
+                中联供应链有限公司是一家立足中国、服务全球商业伙伴的专业供应链与仓储运营企业。公司专注于一体化供应链管理、专业温控冷库仓储及现代化通用普货仓储，为广大企业级客户提供值得信赖的库内作业与存管基础设施。
+              </p>
+              <p data-en="We emphasize operational reliability, efficient inventory management, long-term business partnerships, and professional warehouse operations. By maintaining disciplined storage standards and systematic handling protocols, we ensure that clients' inventories remain secure, accessible, and precisely managed at all stages." data-zh="我们始终以作业可靠性、高效库存管理、长远商业合作以及专业化库内运营为核心理念。依托严谨的库区定置管理与规范的操作流程，确保客户货物在各个存储环节得到妥善保管与高效调度。" data-id="Kami mengutamakan keandalan operasional, manajemen inventaris yang efisien, kemitraan bisnis jangka panjang, dan operasional gudang profesional. Dengan standar penyimpanan berdisiplin dan protokol penanganan sistematis, kami memastikan inventaris klien tetap aman, mudah diakses, dan dikelola secara akurat di setiap tahapan.">
+                我们始终以作业可靠性、高效库存管理、长远商业合作以及专业化库内运营为核心理念。依托严谨的库区定置管理与规范的操作流程，确保客户货物在各个存储环节得到妥善保管与高效调度。
+              </p>
+            </div>
+
+            <!-- 4 Emphasized Core Principles -->
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4 data-en="Operational Reliability" data-zh="作业严谨可靠" data-id="Keandalan Operasional">作业严谨可靠</h4>
+                  <p data-en="Consistent operational protocols and rigorous safety standards." data-zh="规范化的作业准则与严格的库区安全标准。" data-id="Protokol operasional yang konsisten dan standar keselamatan kerja yang ketat.">规范化的作业准则与严格的库区安全标准。</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4 data-en="Efficient Inventory Management" data-zh="高效库存管理" data-id="Manajemen Inventaris Efisien">高效库存管理</h4>
+                  <p data-en="Accurate stock tracking, batch control, and audit readiness." data-zh="精准的货位管理、批次追踪与系统化盘点体系。" data-id="Pelacakan stok akurat, kontrol batch, dan kesiapan audit berkala.">精准的货位管理、批次追踪与系统化盘点体系。</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4 data-en="Long-Term Business Partnerships" data-zh="长期商业合作" data-id="Kemitraan Bisnis Jangka Panjang">长期商业合作</h4>
+                  <p data-en="Dedicated enterprise service built on integrity and mutual value." data-zh="立足长远发展，建立透明诚信的长期企业级伙伴关系。" data-id="Layanan korporat berdedikasi yang dibangun di atas integritas dan nilai bersama.">立足长远发展，建立透明诚信的长期企业级伙伴关系。</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4 data-en="Professional Warehouse Operations" data-zh="专业库内运营" data-id="Operasional Gudang Profesional">专业库内运营</h4>
+                  <p data-en="Experienced on-site personnel and modern warehouse equipment." data-zh="经验丰富的库内作业团队与完善现代的装卸仓储设备。" data-id="Personel berpengalaman di lokasi dan peralatan pergudangan modern.">经验丰富的库内作业团队与完善现代的装卸仓储设备。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag" data-en="CORE SPECIALIZATIONS" data-zh="专业业务体系" data-id="SPESIALISASI UTAMA">专业业务体系</div>
+          <h2 class="section-title" data-en="Our Services" data-zh="核心服务范围" data-id="Layanan Kami">核心服务范围</h2>
+          <p class="section-lead" data-en="Providing integrated, dependable warehousing and supply chain solutions tailored for corporate requirements." data-zh="聚焦企业级仓储与供应链核心需求，提供可靠、规范、高效的业务支持。" data-id="Menyediakan solusi pergudangan dan rantai pasok terintegrasi yang andal, disesuaikan untuk kebutuhan korporat.">
+            聚焦企业级仓储与供应链核心需求，提供可靠、规范、高效的业务支持。
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1: Supply Chain Management -->
+          <div class="service-card" id="supply-chain">
+            <div class="service-image-wrapper">
+              <img src="Assets/images/warehouse-manager.jpg" alt="Supply chain management and inventory coordination" class="service-img" loading="lazy">
+              <div class="service-badge">01</div>
+            </div>
+            <div class="service-body">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3"/>
+                  <circle cx="6" cy="12" r="3"/>
+                  <circle cx="18" cy="19" r="3"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              </div>
+              <h3 class="service-title" data-en="Supply Chain Management" data-zh="供应链管理" data-id="Manajemen Rantai Pasok">供应链管理</h3>
+              <p class="service-desc" data-en="Comprehensive coordination and management across supply chain nodes to optimize inventory flow and supplier alignment." data-zh="针对企业供应链关键节点提供系统性协调与管理支持，优化库存流转与上下游协同。" data-id="Koordinasi dan manajemen menyeluruh di setiap titik rantai pasok untuk mengoptimalkan aliran inventaris dan keselarasan pemasok.">
+                针对企业供应链关键节点提供系统性协调与管理支持，优化库存流转与上下游协同。
+              </p>
+              <ul class="service-bullets">
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Supply chain coordination" data-zh="供应链协同管理" data-id="Koordinasi rantai pasok">供应链协同管理</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Sourcing and procurement support" data-zh="采购与寻源商务支持" data-id="Dukungan pengadaan &amp; sourcing">采购与寻源商务支持</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Inventory management" data-zh="全面库存分析与管理" data-id="Manajemen inventaris komprehensif">全面库存分析与管理</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Supplier coordination" data-zh="供应商协同对接" data-id="Koordinasi pemasok mitra">供应商协同对接</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service Card 2: Cold Storage -->
+          <div class="service-card" id="cold-storage">
+            <div class="service-image-wrapper">
+              <img src="Assets/images/cold-storage-facility.jpg" alt="Temperature-controlled cold storage warehouse facility" class="service-img" loading="lazy">
+              <div class="service-badge">02</div>
+            </div>
+            <div class="service-body">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                </svg>
+              </div>
+              <h3 class="service-title" data-en="Cold Storage" data-zh="冷库仓储" data-id="Cold Storage (Penyimpanan Dingin)">冷库仓储</h3>
+              <p class="service-desc" data-en="Precision temperature-controlled warehousing engineered to preserve the integrity of sensitive products." data-zh="高标准多温区温控仓储设施，严格保障温敏类物资与货品的储存品质与安全。" data-id="Pergudangan dengan pengatur suhu presisi yang dirancang untuk menjaga kualitas produk sensitif suhu.">
+                高标准多温区温控仓储设施，严格保障温敏类物资与货品的储存品质与安全。
+              </p>
+              <ul class="service-bullets">
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Temperature-controlled storage" data-zh="多温区恒温冷藏仓储" data-id="Penyimpanan terkontrol suhu">多温区恒温冷藏仓储</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Refrigerated warehouse facilities" data-zh="现代化冷链仓储硬件设施" data-id="Fasilitas gudang berpendingin">现代化冷链仓储硬件设施</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Cold chain inventory management" data-zh="冷链专业库存与批次管理" data-id="Manajemen inventaris rantai dingin">冷链专业库存与批次管理</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Storage solutions for temperature-sensitive products" data-zh="温敏货品定制化存储方案" data-id="Solusi penyimpanan produk sensitif suhu">温敏货品定制化存储方案</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Warehousing -->
+          <div class="service-card" id="warehousing">
+            <div class="service-image-wrapper">
+              <img src="Assets/images/service-warehousing.jpg" alt="General warehouse storage facilities and goods handling" class="service-img" loading="lazy">
+              <div class="service-badge">03</div>
+            </div>
+            <div class="service-body">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <h3 class="service-title" data-en="Warehousing" data-zh="普货仓储" data-id="Pergudangan Umum">普货仓储</h3>
+              <p class="service-desc" data-en="Spacious, organized general warehousing infrastructure providing flexible commercial capacity and reliable goods handling." data-zh="大体量现代化高标普货仓储空间，为企业提供灵活弹性的存储容积与规范的货物装卸管理。" data-id="Infrastruktur pergudangan umum yang luas dan terorganisir, menyediakan kapasitas komersial fleksibel serta penanganan barang yang andal.">
+                大体量现代化高标普货仓储空间，为企业提供灵活弹性的存储容积与规范的货物装卸管理。
+              </p>
+              <ul class="service-bullets">
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="General warehouse facilities" data-zh="标准化通用普货仓库设施" data-id="Fasilitas gudang umum modern">标准化通用普货仓库设施</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Inventory storage and management" data-zh="物资入库、存储与在库管理" data-id="Penyimpanan &amp; pengelolaan inventaris">物资入库、存储与在库管理</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Goods handling and warehouse operations" data-zh="货物装卸与规范化库内作业" data-id="Penanganan barang &amp; operasional gudang">货物装卸与规范化库内作业</span>
+                </li>
+                <li>
+                  <span class="bullet-check">&#10003;</span>
+                  <span data-en="Flexible storage solutions for businesses" data-zh="面向企业需求的弹性仓储方案" data-id="Solusi penyimpanan fleksibel untuk bisnis">面向企业需求的弹性仓储方案</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Facilities Section -->
+    <section class="facilities-section" id="facilities">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag" data-en="INFRASTRUCTURE &amp; ASSETS" data-zh="实体仓储设施" data-id="INFRASTRUKTUR &amp; FASILITAS">实体仓储设施</div>
+          <h2 class="section-title" data-en="Our Facilities" data-zh="仓储设施实景展示" data-id="Fasilitas Kami">仓储设施实景展示</h2>
+          <p class="section-lead" data-en="Realistic photography of industrial warehouses, organized storage racks, clean cold storage facilities, and professional warehouse interiors." data-zh="展现标准化工业级仓储环境、有序的立体货架布局、严谨洁净的温控库区以及专业规范的库内作业空间。" data-id="Dokumentasi fotografi nyata gudang industri, rak penyimpanan tertata, fasilitas cold storage bersih, dan interior pergudangan profesional.">
+            展现标准化工业级仓储环境、有序的立体货架布局、严谨洁净的温控库区以及专业规范的库内作业空间。
+          </p>
+        </div>
+
+        <!-- Editorial Gallery Layout -->
+        <div class="gallery-grid">
+          <!-- Gallery Item 1 -->
+          <div class="gallery-item gallery-item-wide" onclick="openLightbox(0)">
+            <img src="Assets/images/facility-high-bay.jpg" alt="Industrial high-bay storage racks with palletized cargo" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="HIGH-BAY RACKING" data-zh="立体高位货架" data-id="RAK TINGGI (HIGH-BAY)">立体高位货架</span>
+              <h4 class="gallery-title" data-en="Organized Industrial Storage Racks" data-zh="标准化工业立体货架区" data-id="Rak Penyimpanan Industri Terorganisir">标准化工业立体货架区</h4>
+              <p class="gallery-desc" data-en="High-density multi-tier pallet racking for standardized inventory placement." data-zh="高密度多层托盘货架，实现标准化货位管理。" data-id="Sistem rak palet bertingkat densitas tinggi untuk penempatan inventaris terstandar.">高密度多层托盘货架，实现标准化货位管理。</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div class="gallery-item" onclick="openLightbox(1)">
+            <img src="Assets/images/cold-storage-facility.jpg" alt="Clean cold storage facility interior with temperature control" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="COLD STORAGE ROOM" data-zh="恒温洁净冷库" data-id="RUANG COLD STORAGE">恒温洁净冷库</span>
+              <h4 class="gallery-title" data-en="Clean Cold Storage Facilities" data-zh="专业温控冷链库房" data-id="Fasilitas Cold Storage Bersih">专业温控冷链库房</h4>
+              <p class="gallery-desc" data-en="Sanitary temperature-monitored refrigerated chamber." data-zh="严格温控与卫生标准的冷藏仓储库房。" data-id="Ruang berpendingin higienis dengan pemantauan suhu ketat.">严格温控与卫生标准的冷藏仓储库房。</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div class="gallery-item" onclick="openLightbox(2)">
+            <img src="Assets/images/warehouse-exterior-dock.jpg" alt="Warehouse goods handling and staging area" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="HANDLING &amp; STAGING" data-zh="库内作业分流区" data-id="PENANGANAN &amp; STAGING">库内作业分流区</span>
+              <h4 class="gallery-title" data-en="Goods Handling &amp; Operations" data-zh="货物装卸与库内调度" data-id="Penanganan Barang &amp; Operasional">货物装卸与库内调度</h4>
+              <p class="gallery-desc" data-en="Dedicated handling zone for safe pallet transport and staging." data-zh="规范化的托盘搬运与暂存作业区域。" data-id="Area khusus penanganan untuk pemindahan palet dan staging yang aman.">规范化的托盘搬运与暂存作业区域。</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div class="gallery-item" onclick="openLightbox(3)">
+            <img src="Assets/images/service-warehousing.jpg" alt="Warehouse interior with reach truck and pallet inventory" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="WAREHOUSE INTERIOR" data-zh="库内实景空间" data-id="INTERIOR GUDANG">库内实景空间</span>
+              <h4 class="gallery-title" data-en="Professional Warehouse Interiors" data-zh="现代化库内作业空间" data-id="Interior Gudang Profesional">现代化库内作业空间</h4>
+              <p class="gallery-desc" data-en="Clean aisles and modern material handling machinery." data-zh="宽敞整洁的作业通道与规范的搬运设备。" data-id="Lorong gudang yang bersih dan peralatan penanganan material modern.">宽敞整洁的作业通道与规范的搬运设备。</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div class="gallery-item" onclick="openLightbox(4)">
+            <img src="Assets/images/warehouse-interior-racks.jpg" alt="General warehouse facilities with organized storage" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="GENERAL STORAGE" data-zh="通用仓储设施" data-id="PENYIMPANAN UMUM">通用仓储设施</span>
+              <h4 class="gallery-title" data-en="General Warehouse Facilities" data-zh="大容量通用仓储库区" data-id="Fasilitas Pergudangan Umum">大容量通用仓储库区</h4>
+              <p class="gallery-desc" data-en="Multi-category inventory placement and spacious storage floors." data-zh="多品类物资分类定置与充足仓储空间。" data-id="Penataan inventaris multi-kategori dan area penyimpanan yang luas.">多品类物资分类定置与充足仓储空间。</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div class="gallery-item" onclick="openLightbox(5)">
+            <img src="Assets/images/hero-warehouse.jpg" alt="High ceiling narrow aisle racking facility" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag" data-en="VERTICAL CAPACITY" data-zh="高净空立体库容" data-id="KAPASITAS VERTIKAL">高净空立体库容</span>
+              <h4 class="gallery-title" data-en="High-Bay Narrow Aisle System" data-zh="窄通道高位立体存储" data-id="Sistem Rak Lorong Sempit (VNA)">窄通道高位立体存储</h4>
+              <p class="gallery-desc" data-en="Engineered for maximum vertical cube utilization." data-zh="科学提升空间利用率的重型立体存储结构。" data-id="Dirancang untuk pemanfaatan kapasitas ruang vertikal secara optimal.">科学提升空间利用率的重型立体存储结构。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Zhonglian Section -->
+    <section class="why-section" id="why-us">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag" data-en="CORE STRENGTHS" data-zh="核心优势" data-id="KEUNGGULAN UTAMA">核心优势</div>
+          <h2 class="section-title" data-en="Why Zhonglian" data-zh="选择中联供应链的理由" data-id="Mengapa Memilih Zhonglian">选择中联供应链的理由</h2>
+          <p class="section-lead" data-en="Our corporate foundation is built on operational rigor, professional management, and long-term commitment to our enterprise clients." data-zh="以规范严谨的作业流程、健全专业的管理体系，构筑长远稳固的企业级合作信任。" data-id="Fondasi perusahaan kami dibangun di atas disiplin operasional, manajemen profesional, dan komitmen jangka panjang bagi klien korporat.">
+            以规范严谨的作业流程、健全专业的管理体系，构筑长远稳固的企业级合作信任。
+          </p>
+        </div>
+
+        <div class="strengths-grid">
+          <!-- Strength 1 -->
+          <div class="strength-card">
+            <div class="strength-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3 class="strength-title" data-en="Reliable Operations" data-zh="可靠运营" data-id="Operasional Andal">可靠运营</h3>
+            <p class="strength-desc" data-en="Disciplined day-to-day execution, dependable procedures, and rigorous safety protocols guarantee consistency across all warehouse operations." data-zh="规范化的日常作业执行标准、严密的库区安全防范体系，确保每一批货物出入库均保持高度稳定性。" data-id="Eksekusi harian yang berdisiplin, prosedur yang dapat diandalkan, dan protokol keselamatan ketat menjamin konsistensi di seluruh operasional gudang.">
+              规范化的日常作业执行标准、严密的库区安全防范体系，确保每一批货物出入库均保持高度稳定性。
+            </p>
+          </div>
+
+          <!-- Strength 2 -->
+          <div class="strength-card">
+            <div class="strength-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                <path d="M9 22v-4h6v4"/>
+                <line x1="8" y1="6" x2="8.01" y2="6"/>
+                <line x1="12" y1="6" x2="12.01" y2="6"/>
+                <line x1="16" y1="6" x2="16.01" y2="6"/>
+                <line x1="8" y1="10" x2="8.01" y2="10"/>
+                <line x1="12" y1="10" x2="12.01" y2="10"/>
+                <line x1="16" y1="10" x2="16.01" y2="10"/>
+                <line x1="8" y1="14" x2="8.01" y2="14"/>
+                <line x1="12" y1="14" x2="12.01" y2="14"/>
+                <line x1="16" y1="14" x2="16.01" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="strength-title" data-en="Professional Warehouse Management" data-zh="专业仓库管理" data-id="Manajemen Gudang Profesional">专业仓库管理</h3>
+            <p class="strength-desc" data-en="Trained warehouse personnel, systematic inventory recording, and organized shelf layout ensure high accuracy and smooth stock accountability." data-zh="专业化库内管理团队、清晰的货位规划与精准的台账记录，实现物资账实相符与全流程清晰追溯。" data-id="Personel gudang terlatih, pencatatan inventaris sistematis, dan tata letak rak yang tertata memastikan akurasi tinggi dan akuntabilitas stok.">
+              专业化库内管理团队、清晰的货位规划与精准的台账记录，实现物资账实相符与全流程清晰追溯。
+            </p>
+          </div>
+
+          <!-- Strength 3 -->
+          <div class="strength-card">
+            <div class="strength-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="21" x2="4" y2="14"/>
+                <line x1="4" y1="10" x2="4" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12" y2="3"/>
+                <line x1="20" y1="21" x2="20" y2="16"/>
+                <line x1="20" y1="12" x2="20" y2="3"/>
+                <line x1="1" y1="14" x2="7" y2="14"/>
+                <line x1="9" y1="8" x2="15" y2="8"/>
+                <line x1="17" y1="16" x2="23" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="strength-title" data-en="Flexible Storage Solutions" data-zh="灵活存储方案" data-id="Solusi Penyimpanan Fleksibel">灵活存储方案</h3>
+            <p class="strength-desc" data-en="Customized storage configurations and scalable space allocations designed to adapt to fluctuating commercial inventory demands." data-zh="根据企业业务规模、季节性需求与商品特性，提供定制化货位配给与弹性仓容组合，助力企业降本增效。" data-id="Konfigurasi penyimpanan khusus dan alokasi ruang terukur yang dirancang untuk menyesuaikan fluktuasi kebutuhan inventaris komersial.">
+              根据企业业务规模、季节性需求与商品特性，提供定制化货位配给与弹性仓容组合，助力企业降本增效。
+            </p>
+          </div>
+
+          <!-- Strength 4 -->
+          <div class="strength-card">
+            <div class="strength-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="strength-title" data-en="Long-Term Business Partnerships" data-zh="长期商业合作" data-id="Kemitraan Bisnis Jangka Panjang">长期商业合作</h3>
+            <p class="strength-desc" data-en="We prioritize enduring business relationships, offering transparent communication and dependable operational collaboration." data-zh="注重与企业客户建立长期、互利共赢的稳固合作关系，以诚信沟通与持久履约能力赢得长期信赖。" data-id="Kami memprioritaskan hubungan bisnis yang langgeng, menawarkan komunikasi transparan dan kolaborasi operasional yang dapat diandalkan.">
+              注重与企业客户建立长期、互利共赢的稳固合作关系，以诚信沟通与持久履约能力赢得长期信赖。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-grid">
+            <!-- Left Info Panel -->
+            <div class="contact-info-panel">
+              <div class="section-tag section-tag-light" data-en="GET IN TOUCH" data-zh="商务对接" data-id="HUBUNGI KAMI">商务对接</div>
+              <h2 class="contact-headline" data-en="Let’s Build a Reliable Partnership" data-zh="共建稳固可靠的商业伙伴关系" data-id="Mari Membangun Kemitraan yang Andal">
+                共建稳固可靠的商业伙伴关系
+              </h2>
+              <p class="contact-lead" data-en="Contact our team to discuss your supply chain, cold storage, and warehousing requirements." data-zh="联系我们的专业团队，深入沟通您的供应链协同、冷库仓储及普货仓储业务需求。" data-id="Hubungi tim kami untuk mendiskusikan kebutuhan rantai pasok, cold storage, dan pergudangan Anda.">
+                联系我们的专业团队，深入沟通您的供应链协同、冷库仓储及普货仓储业务需求。
+              </p>
+
+              <div class="contact-details">
+                <div class="detail-row">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label" data-en="Company Email" data-zh="企业电子邮箱" data-id="Email Perusahaan">企业电子邮箱</span>
+                    <span class="detail-val">info@zhongliansupply.com</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label" data-en="WeChat ID" data-zh="微信号" data-id="WeChat ID">微信号</span>
+                    <span class="detail-val">zhongliansupply</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label" data-en="Business Address" data-zh="企业办公及库区地址" data-id="Alamat Bisnis">企业办公及库区地址</span>
+                    <span class="detail-val">Ningbo City (宁波市), 315000, Zhejiang Province, China</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-notice">
+                <span class="notice-badge" data-en="B2B INQUIRIES" data-zh="企业服务专线" data-id="LAYANAN B2B">企业服务专线</span>
+                <p data-en="Our operational team handles corporate inquiries regarding storage space allocation, temperature-controlled facilities, and supply chain coordination." data-zh="我们的运营团队专注于企业级仓储空间配置、温控冷库及供应链协同业务咨询。" data-id="Tim operasional kami menangani konsultasi korporat terkait alokasi kapasitas gudang, fasilitas cold storage, dan koordinasi rantai pasok.">
+                  我们的运营团队专注于企业级仓储空间配置、温控冷库及供应链协同业务咨询。
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Inquiry Form -->
+            <div class="contact-form-panel">
+              <form class="corporate-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+                <h3 class="form-title" data-en="Send Business Inquiry" data-zh="提交商务咨询" data-id="Kirimkan Inquiry Bisnis">提交商务咨询</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name" class="form-label" data-en="Full Name *" data-zh="联系人姓名 *" data-id="Nama Lengkap *">联系人姓名 *</label>
+                    <input type="text" id="contact-name" class="form-input" placeholder="张先生 / John Zhang" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-company" class="form-label" data-en="Company Name *" data-zh="企业名称 *" data-id="Nama Perusahaan *">企业名称 *</label>
+                    <input type="text" id="contact-company" class="form-input" placeholder="例如：某某商贸实业有限公司" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-email" class="form-label" data-en="Business Email *" data-zh="企业邮箱 *" data-id="Email Bisnis *">企业邮箱 *</label>
+                    <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-phone" class="form-label" data-en="Phone Number" data-zh="联系电话" data-id="Nomor Telepon">联系电话</label>
+                    <input type="tel" id="contact-phone" class="form-input" placeholder="+86 ... / +62 ...">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-service" class="form-label" data-en="Service of Interest *" data-zh="咨询服务项目 *" data-id="Layanan yang Diminati *">咨询服务项目 *</label>
+                  <select id="contact-service" class="form-select" required>
+                    <option value="" disabled selected data-en="-- Select Service --" data-zh="-- 请选择服务类别 --" data-id="-- Pilih Kategori Layanan --">-- 请选择服务类别 --</option>
+                    <option value="supply-chain" data-en="Supply Chain Management" data-zh="供应链管理" data-id="Manajemen Rantai Pasok">供应链管理</option>
+                    <option value="cold-storage" data-en="Cold Storage Warehousing" data-zh="冷库仓储服务" data-id="Pergudangan Cold Storage">冷库仓储服务</option>
+                    <option value="warehousing" data-en="General Warehousing" data-zh="普货仓储服务" data-id="Pergudangan Umum">普货仓储服务</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label" data-en="Inquiry Details / Storage Requirements *" data-zh="需求描述与仓储明细 *" data-id="Rincian Kebutuhan &amp; Spesifikasi Gudang *">需求描述与仓储明细 *</label>
+                  <textarea id="contact-message" class="form-textarea" rows="4" placeholder="请简要说明您的预估货量、温度温区要求、入库周期或供应链协同需求..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit" id="submit-btn" data-en="Contact Us" data-zh="提交咨询" data-id="Kirimkan Inquiry">
+                  提交咨询
+                </button>
+
+                <div class="form-status" id="form-status" style="display:none;"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Deep Navy Blue Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Brand & Description Column -->
+        <div class="footer-col footer-col-brand">
+          <a href="#home" class="footer-logo-link">
+            <img src="Assets/logo-horizontal-white.png" alt="Zhonglian Supply Chain Co., Ltd." class="footer-logo" width="280" height="44">
+          </a>
+          <div class="footer-company-names">
+            <h3 class="footer-company-en">Zhonglian Supply Chain Co., Ltd.</h3>
+            <p class="footer-company-zh">中联供应链有限公司</p>
+          </div>
+          <p class="footer-brand-desc" data-en="A professional corporate provider specializing in integrated supply chain management, cold storage warehousing, and general warehousing solutions across China." data-zh="专注于一体化供应链管理、多温区冷库仓储及现代化高标普货仓储的中国专业企业级服务商。" data-id="Penyedia korporat profesional yang berspesialisasi dalam manajemen rantai pasok terintegrasi, pergudangan cold storage, dan solusi pergudangan umum di China.">
+            专注于一体化供应链管理、多温区冷库仓储及现代化高标普货仓储的中国专业企业级服务商。
+          </p>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-en="Navigation" data-zh="快速导航" data-id="Navigasi">快速导航</h4>
+          <ul class="footer-links">
+            <li><a href="#home" data-en="Home" data-zh="首页" data-id="Beranda">首页</a></li>
+            <li><a href="#about" data-en="About Us" data-zh="关于我们" data-id="Tentang Kami">关于我们</a></li>
+            <li><a href="#supply-chain" data-en="Supply Chain" data-zh="供应链管理" data-id="Rantai Pasok">供应链管理</a></li>
+            <li><a href="#cold-storage" data-en="Cold Storage" data-zh="冷库仓储" data-id="Cold Storage">冷库仓储</a></li>
+            <li><a href="#warehousing" data-en="Warehousing" data-zh="普货仓储" data-id="Pergudangan">普货仓储</a></li>
+            <li><a href="#facilities" data-en="Facilities" data-zh="仓储设施" data-id="Fasilitas">仓储设施</a></li>
+            <li><a href="#contact" data-en="Contact Us" data-zh="联系我们" data-id="Hubungi Kami">联系我们</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialized Core Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-en="Core Services" data-zh="核心服务范围" data-id="Layanan Utama">核心服务范围</h4>
+          <ul class="footer-links">
+            <li><a href="#supply-chain" data-en="Supply Chain Coordination" data-zh="供应链协同管理" data-id="Koordinasi Rantai Pasok">供应链协同管理</a></li>
+            <li><a href="#supply-chain" data-en="Sourcing &amp; Procurement Support" data-zh="采购与寻源商务支持" data-id="Dukungan Pengadaan &amp; Sourcing">采购与寻源商务支持</a></li>
+            <li><a href="#supply-chain" data-en="Inventory Management" data-zh="全面库存管理" data-id="Manajemen Inventaris Terpadu">全面库存管理</a></li>
+            <li><a href="#cold-storage" data-en="Temperature-Controlled Storage" data-zh="恒温冷库仓储" data-id="Penyimpanan Suhu Terkontrol">恒温冷库仓储</a></li>
+            <li><a href="#cold-storage" data-en="Cold Chain Inventory Solutions" data-zh="冷链库存管理方案" data-id="Solusi Inventaris Rantai Dingin">冷链库存管理方案</a></li>
+            <li><a href="#warehousing" data-en="General Warehouse Facilities" data-zh="高标通用普货仓库" data-id="Fasilitas Gudang Umum Modern">高标通用普货仓库</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information Placeholders -->
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-en="Corporate Contact" data-zh="企业联系方式" data-id="Kontak Perusahaan">企业联系方式</h4>
+          <div class="footer-contact-block">
+            <p><strong>Email:</strong><br>info@zhongliansupply.com</p>
+            <p><strong>WeChat:</strong><br>zhongliansupply</p>
+            <p><strong>Address:</strong><br>Ningbo City (宁波市), 315000<br>Zhejiang Province, China</p>
+          </div>
+          <div class="footer-trust-tag">
+            <span class="trust-badge" data-en="B2B Operational Excellence" data-zh="专业B2B运营典范" data-id="Keunggulan Operasional B2B">专业B2B运营典范</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p class="copyright">
+            &copy; <span id="current-year">2026</span> Zhonglian Supply Chain Co., Ltd. (中联供应链有限公司). All Rights Reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <span class="footer-meta-item" data-en="Corporate Supply Chain &amp; Warehousing" data-zh="企业级供应链与仓储基础设施" data-id="Infrastruktur Rantai Pasok &amp; Pergudangan Korporat">企业级供应链与仓储基础设施</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Facility Photography -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightbox-img" class="lightbox-photo">
+        <div class="lightbox-caption">
+          <span class="lightbox-tag" id="lightbox-tag"></span>
+          <h3 class="lightbox-title" id="lightbox-title"></h3>
+          <p class="lightbox-desc" id="lightbox-desc"></p>
+        </div>
+      </div>
+      <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Previous image">&#10094;</button>
+      <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Next image">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
