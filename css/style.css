@@ -343,46 +343,67 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 74px;
+  width: 100%;
+  max-width: 1400px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 28px;
 }
 
 .header-logo {
-  height: 48px;
+  height: 42px;
   width: auto;
-  max-width: 320px;
+  max-width: 260px;
   object-fit: contain;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 20px;
+  flex-shrink: 1;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  flex-shrink: 0;
 }
 
 .nav-link {
-  font-size: 0.9375rem;
+  font-size: 0.84375rem;
   font-weight: 500;
   color: var(--color-gray-700);
-  padding: 6px 0;
+  padding: 8px 3px;
+  white-space: nowrap;
   position: relative;
   transition: var(--transition-smooth);
+  display: inline-block;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-navy);
+  font-weight: 600;
 }
 
 .nav-link::after {
@@ -401,6 +422,28 @@ button, input, select, textarea {
   width: 100%;
 }
 
+.nav-cta {
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.btn-navy-header {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+  padding: 8px 18px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.btn-navy-header:hover {
+  background-color: var(--color-navy-light);
+  border-color: var(--color-navy-light);
+}
+
 .mobile-toggle {
   display: none;
   background: none;
@@ -413,6 +456,7 @@ button, input, select, textarea {
   gap: 5px;
   cursor: pointer;
   padding: 6px;
+  flex-shrink: 0;
 }
 
 .hamburger-line {
@@ -2090,7 +2134,41 @@ button, input, select, textarea {
 /* --------------------------------------------------------------------------
    14. Responsive Media Queries
    -------------------------------------------------------------------------- */
+@media (max-width: 1260px) {
+  .header-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header-logo {
+    height: 38px;
+    max-width: 220px;
+  }
+  .logo-link {
+    margin-right: 18px;
+  }
+  .main-nav {
+    gap: 14px;
+  }
+  .nav-list {
+    gap: 11px;
+  }
+  .nav-link {
+    font-size: 0.8125rem;
+    padding: 6px 1px;
+  }
+  .btn-navy-header {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+}
+
 @media (max-width: 1080px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
   .hero-title {
     font-size: 2.75rem;
   }
@@ -2127,12 +2205,6 @@ button, input, select, textarea {
 @media (max-width: 860px) {
   :root {
     --section-pad-y: 64px;
-  }
-  .main-nav {
-    display: none;
-  }
-  .mobile-toggle {
-    display: flex;
   }
   .about-grid {
     grid-template-columns: 1fr;
